@@ -1,6 +1,6 @@
 public class BancoDePalavras
 {
-    private String banco [] = {"JAVA",
+    private  String banco [] = {"JAVA",
                                "CLASSE",
                                "OBJETO",
                                "INSTANCIA",
@@ -12,6 +12,11 @@ public class BancoDePalavras
                                "GETTER",
                                "LUZ",
                                "PRAZER"};
+							   
+							   
+							   
+							   
+	
 
     public Palavra getPalavraSorteada ()
     {
@@ -27,19 +32,37 @@ public class BancoDePalavras
         return palavra;
     }
 
-    public String toString ()
+    public  String toString ()// Sem ideias!
     {
-        // resultar um String contendo as palavras do banco
-    }
+        return this.banco[2];
+		
+	}
+	
 
-    public boolean equals (Object obj)
+
+    public boolean equals (Object obj) // sem ideias preciso aprendr a percorrer vetor de stringssssss
     {
+		if (obj == this)
+			return true;
+		
+		if (obj == null)
+			return false;
+		
+		if (obj.getClass() != this.getClass())
+			return false;
+		
+		BancoDePalavras Banco = (BancoDePalavras)obj;
+		
+		if (Banco.banco != this.banco)
+			return false;
+		
+		return true;
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
     }
 
-    public int hashCode ()
-    {
+    //public int hashCode ()
+    //{
         // calcular e retornar o hashcode de this
-    }
+    //}
 }
