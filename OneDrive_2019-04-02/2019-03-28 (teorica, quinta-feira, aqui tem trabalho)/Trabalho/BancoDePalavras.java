@@ -32,15 +32,15 @@ public class BancoDePalavras
         return palavra;
     }
 
-    public  String toString ()// Sem ideias!
+    public  String toString ()// Nao implemetado !
     {
-        return this.banco[2];
+        return "Palvras no banco: "+this.banco.toString();
 		
 	}
 	
 
 
-    public boolean equals (Object obj) // sem ideias preciso aprendr a percorrer vetor de stringssssss
+    public boolean equals (Object obj)// Testado : Ok
     {
 		if (obj == this)
 			return true;
@@ -53,16 +53,24 @@ public class BancoDePalavras
 		
 		BancoDePalavras Banco = (BancoDePalavras)obj;
 		
-		if (Banco.banco != this.banco)
+		if (Banco.banco.length != this.banco.length)
 			return false;
 		
+		for (int i = 0; i < Banco.banco.length; i++)
+		{
+			if (Banco.banco[i] != this.banco[i])
+				return false;
+		}
+		
 		return true;
-        // verificar se this e obj possuem o mesmo conteúdo, retornando
-        // true no caso afirmativo ou false no caso negativo
     }
 
-    //public int hashCode ()
-    //{
-        // calcular e retornar o hashcode de this
-    //}
+    public int hashCode () //Testado : Ok
+    {
+		int ret = 1;
+		ret = ret * 2 + this.banco.hashCode();
+		
+		return ret; // Tentar implementar o operador ternario 
+        
+    }
 }
