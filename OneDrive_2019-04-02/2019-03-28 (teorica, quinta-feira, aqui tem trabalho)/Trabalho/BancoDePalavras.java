@@ -38,6 +38,9 @@ public class BancoDePalavras
 		
 	}
 	
+	
+	
+	
 
 
     public boolean equals (Object obj)// Testado : Ok
