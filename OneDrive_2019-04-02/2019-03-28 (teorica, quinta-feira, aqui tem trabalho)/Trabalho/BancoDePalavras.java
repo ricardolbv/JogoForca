@@ -34,7 +34,15 @@ public class BancoDePalavras
 
     public  String toString ()// Nao implemetado !
     {
-        return "Palvras no banco: "+this.banco.toString();
+		String ret [] = null;
+		int i = 0;
+		
+			for ( ; i < (this.banco.length - 1); i++)
+			{
+				ret [i] = this.banco[i];
+			}
+			
+        return "Palavras no banco: "+ret;
 		
 	}
 	
