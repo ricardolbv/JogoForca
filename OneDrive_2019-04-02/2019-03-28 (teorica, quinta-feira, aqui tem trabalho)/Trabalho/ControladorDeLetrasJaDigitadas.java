@@ -7,11 +7,16 @@ class ControladorDeLetrasJaDigitadas implements Cloneable
         this.jaForam="";
     }
 
-    public boolean isJaDigitada (char ltr)
+    public boolean isJaDigitada (char ltr) //Teste: nao consegui testar
     {
-        // percorrer o String jaForam e verificar se o mesmo
-        // possui a letra ltr, retornando true em caso afirmativo
-        // ou false em caso negativo
+		int i = 0;
+		
+		for ( ; i < this.jaForam.length() - 1; i++)
+		{
+			if (this.jaForam.charAt(i) == ltr)
+				return true;
+		}
+		return false;
     }
 
     public void registreUmaLetra (char ltr) throws Exception
@@ -38,23 +43,53 @@ class ControladorDeLetrasJaDigitadas implements Cloneable
         return saida;
     }
 
-    public boolean equals (Object obj)
+    public boolean equals (Object obj)// Teste: PASS
     {
-        // verificar se this e obj são iguais
-    }
+		if (obj == this)
+			return true;
+		
+		if (obj == null)
+			return false;
+		
+		if (obj.getClass() != this.getClass())
+			return false;
+		
+		ControladorDeLetrasJaDigitadas ltr = (ControladorDeLetrasJaDigitadas)obj;
+		
+		if (!ltr.jaForam.equals(this.jaForam))
+			return false;
+		
+		return true;
+     }
 
-    public int hashCode ()
+    public int hashCode ()// Teste: PASS
     {
+		int ret = 1;
+		
+		ret = ret * 2 + this.jaForam.hashCode();
+		
+		return ret;
         // calcular e retornar o hashcode de this
     }
 
-    public ControladorDeLetrasJaDigitadas (ControladorDeLetrasJaDigitadas c) throws Exception // construtor de cópia
+    public ControladorDeLetrasJaDigitadas (ControladorDeLetrasJaDigitadas c) throws Exception // Teste:PASS
     {
-        // copiar c.jaForam em this.jaForam
+		if (c == null)
+			throw new Exception ("Clone de objeto nulo!");
+		
+		this.jaForam = c.jaForam;
     }
 
-    public Object clone ()
+    public Object clone ()// Teste:PASS
     {
-        // retornar uma copia de this
+		ControladorDeLetrasJaDigitadas ret = null;
+		
+		try 
+		{
+			ret = new ControladorDeLetrasJaDigitadas (this);
+		}
+		catch (Exception a)
+		{}
+       return ret;
     }
 }
