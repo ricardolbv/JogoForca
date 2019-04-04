@@ -10,14 +10,38 @@ class Palavra implements Comparable<Palavra>
         this.texto = txt;
     }
 
-    public int getQuantidadeDaLetra (char ltr)
+    public int getQuantidadeDaLetra (char ltr) // TESTE: PASS
     {
-        // percorre o String this.texto, conta e retorna
-        // quantas letras iguais a ltr existem nele
+		int qtd = 0;
+		
+		for (int i =0; i < this.texto.length(); i ++)
+		{
+			if (this.texto.charAt(i) == ltr)
+				qtd ++;
+		}
+		
+		return qtd;
     }
 
-    public int getPosicaoDeOcorrenciaDaLetra (int ord, char ltr) throws Exception
+    public int getPosicaoDeOcorrenciaDaLetra (int ord, char ltr) throws Exception //TESTE: Fail
     {
+		int pos = 0;
+		
+		for (int i =0; i < this.texto.length(); i ++)
+		{
+			pos ++;
+			if (this.texto.charAt(i) == ltr && ord == 0)
+				return pos;
+			
+			if (this.texto.charAt(i) == ltr && ord == 1)
+				return pos;
+			
+			if (this.texto.charAt(i) == ltr && ord == 2)
+				return pos;
+				
+		}
+	
+		throw new Exception ("Letra nao encontrada!");
         // se ord==0, retorna a posicao em que ocorre
         // a primeira aparicao de ltr em this.texto;
         // se ord==1, retorna a posicao em que ocorre
@@ -39,14 +63,35 @@ class Palavra implements Comparable<Palavra>
         return this.texto;
     }
 
-    public boolean equals (Object obj)
+    public boolean equals (Object obj)//Teste: 
     {
+		if (obj == this)
+			return true;
+		
+		if (obj == null)
+			return false;
+		
+		if (obj.getClass() != this.getClass())
+			return false;
+		
+		Palavra teste = (Palavra)obj;
+		
+		if (this.texto.equals(teste.texto))
+			return true;
+		
+		return false;
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
     }
 
-    public int hashCode ()
+    public int hashCode ()//Teste: 
     {
+		
+		int ret = 1;
+		
+		ret = ret * 2 + new String(this.texto).hashCode();
+		
+		return ret;
         // calcular e retornar o hashcode de this
     }
 
