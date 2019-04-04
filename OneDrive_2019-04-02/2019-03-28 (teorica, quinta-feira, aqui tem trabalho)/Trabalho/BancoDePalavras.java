@@ -34,12 +34,12 @@ public class BancoDePalavras
 
     public  String toString ()// Nao implemetado !
     {
-		String ret [] = null;
+		String ret = "";
 		int i = 0;
 		
 			for ( ; i < (this.banco.length - 1); i++)
 			{
-				ret [i] = this.banco[i];
+				ret += this.banco[i]+", ";
 			}
 			
         return "Palavras no banco: "+ret;
