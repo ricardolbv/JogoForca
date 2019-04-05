@@ -41,7 +41,7 @@ public class BancoDePalavras
 			{
 				ret += this.banco[i]+", ";
 			}
-			
+
         return "Palavras no banco: "+ret;
 		
 	}

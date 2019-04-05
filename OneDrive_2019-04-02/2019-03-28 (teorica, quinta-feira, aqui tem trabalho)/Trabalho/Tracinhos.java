@@ -21,13 +21,16 @@ class Tracinhos implements Cloneable
         this.texto[pos] = ltr;
     }
 
-    public boolean isComTracinhosAinda ()
+    public boolean isComTracinhosAinda () //Teste
     {
-        // percorrer o vetor de char this.texto e verificar
-        // se o mesmo ainda contem algum underline ou se ja
-        // foram todos substituidos por letras; retornar true
-        // caso ainda reste algum underline, ou false caso
-        // contrario
+		int i = 0;
+		
+		for (i=0; i<this.texto.length-1; i++)
+		{
+			if (this.texto[i] == '_')
+				return true;
+		}
+		return false;
     }
 
     public String toString ()
@@ -43,25 +46,66 @@ class Tracinhos implements Cloneable
         return saida;
     }
 
-    public boolean equals (Object obj)
+    public boolean equals (Object obj)//Teste
     {
+		if (obj == this)
+			return true;
+		
+		if (obj == null)
+			return false;
+		
+		if (obj.getClass() != this.getClass())
+			return false;
+		
+		Tracinhos traco = (Tracinhos)obj;
+		
+		if (this.texto.length != traco.texto.length)
+			return false;
+		
+		for (char c : this.texto)
+		{
+			if (this.texto[c] != traco.texto[c])
+				return false;
+		}
+			
+		return true;
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
     }
 
-    public int hashCode ()
+    public int hashCode ()//Teste: 
     {
-        // calcular e retornar o hashcode de this
+		int ret = 1;
+		for (char c : this.texto)
+		{
+			ret = ret * 2 + new Character(c).hashCode();
+		}
+		
+		return ret;
+       
     }
 
-    public Tracinhos (Tracinhos t) throws Exception // construtor de cópia
+    public Tracinhos (Tracinhos t) throws Exception // Teste:
     {
+		if (t == null)
+			throw new Exception ("Clonagem invalida! ");
+		
+		this.texto = t.texto; // Duvida aqui 
         // intanciar this.texto um vetor com o mesmo tamanho de t.texto
         // e copilar o conteúdo de t.texto para this.texto
     }
 
     public Object clone ()
     {
-        // retornar uma copia de this
+		Tracinhos ret = null;
+		
+		try
+		{
+			ret = new Tracinhos (this);
+		}
+		catch (Exception a)
+		{}
+		
+		return ret;
     }
 }
