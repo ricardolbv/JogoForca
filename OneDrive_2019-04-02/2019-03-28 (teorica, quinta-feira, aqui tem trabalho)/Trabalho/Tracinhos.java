@@ -15,7 +15,7 @@ class Tracinhos implements Cloneable
 
     public void desvele (int pos, char ltr) throws Exception
     {
-        if (pos<0 || pos>=texto.length)
+        if (pos<0 || pos>=texto.length) 
             throw new Exception ("Tentativa de substituir letra em posicao inexistente!");
 
         this.texto[pos] = ltr;

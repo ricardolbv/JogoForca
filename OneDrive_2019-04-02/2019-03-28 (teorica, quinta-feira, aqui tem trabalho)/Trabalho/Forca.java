@@ -21,7 +21,7 @@ class Forca
                 ControladorDeErros controladorDeErros =
                 new ControladorDeErros ((int)(palavra.getTamanho()*0.6));
 
-                while (tracinhos.isComTracinhosAinda () && !controladorDeErros.isMaximoDeErrosAtingido ())
+                while (tracinhos.isComTracinhosAinda () && !controladorDeErros.isComMaximoDeErrosAtingido ())
                 {
                     System.out.println ("Palavra: "+tracinhos);
                     System.out.println ("Ja foi.: "+controladorDeLetrasJaDigitadas);

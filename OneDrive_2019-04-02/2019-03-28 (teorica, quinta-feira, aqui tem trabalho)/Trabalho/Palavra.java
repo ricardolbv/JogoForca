@@ -25,24 +25,21 @@ class Palavra implements Comparable<Palavra>
 
     public int getPosicaoDeOcorrenciaDaLetra (int ord, char ltr) throws Exception //TESTE: Fail
     {
-		int pos = 0;
+		int pos = 0, contador = ord;
+		
 		
 		for (int i =0; i < this.texto.length(); i ++)
 		{
 			pos ++;
-			if (this.texto.charAt(i) == ltr && ord == 0)
+			if (this.texto.charAt(i) == ltr)
+			{
+				contador --;
+				if (contador < 0)
 				return pos;
-			
-			if (this.texto.charAt(i) == ltr && ord == 1)
-				return pos;
-			
-			if (this.texto.charAt(i) == ltr && ord == 2)
-				return pos;
-				
+			}
 		}
-	
 		throw new Exception ("Letra nao encontrada!");
-        // se ord==0, retorna a posicao em que ocorre
+        // se ord==0, retorna a posicao em que socorre
         // a primeira aparicao de ltr em this.texto;
         // se ord==1, retorna a posicao em que ocorre
         // a segunda aparicao de ltr em this.texto.
