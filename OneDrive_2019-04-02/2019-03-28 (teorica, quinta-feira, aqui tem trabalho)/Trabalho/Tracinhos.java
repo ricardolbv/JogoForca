@@ -21,11 +21,16 @@ class Tracinhos implements Cloneable
         this.texto[pos] = ltr;
     }
 
-    public boolean isComTracinhosAinda () //Teste
+    public boolean isComTracinhosAinda () //Teste PASS
     {
+		     // percorrer o vetor de char this.texto e verificar
+        // se o mesmo ainda contem algum underline ou se ja
+        // foram todos substituidos por letras; retornar true
+        // caso ainda reste algum underline, ou false caso
+        // contrario
 		int i = 0;
 		
-		for (i=0; i<this.texto.length-1; i++)
+		for (i=0; i<this.texto.length; i++)
 		{
 			if (this.texto[i] == '_')
 				return true;

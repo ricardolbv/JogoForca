@@ -32,7 +32,7 @@ public class BancoDePalavras
         return palavra;
     }
 
-    public  String toString ()// Nao implemetado !
+    public  String toString ()// Pegando !
     {
 		String ret = "";
 		int i = 0;

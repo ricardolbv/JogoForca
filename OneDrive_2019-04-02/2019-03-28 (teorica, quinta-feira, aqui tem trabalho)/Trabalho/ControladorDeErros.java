@@ -13,11 +13,10 @@ class ControladorDeErros implements Cloneable
     public void registreUmErro () throws Exception // Implementado
     {
 		this.qErr ++;
-		if (this.qErr >= this.qMax)
+		if (this.qErr == this.qMax)
 		{
 			throw new Exception ("Erros estourados");
 		}
-		
     }
 
     public boolean isComMaximoDeErrosAtingido  ()
