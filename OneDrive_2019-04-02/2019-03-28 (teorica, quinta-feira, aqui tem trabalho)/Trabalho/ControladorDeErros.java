@@ -12,10 +12,12 @@ class ControladorDeErros implements Cloneable
 
     public void registreUmErro () throws Exception // Implementado
     {
-		if (this.qErr == this.qMax)
-			throw new Exception ("Erros estourados");
-		
 		this.qErr ++;
+		if (this.qErr >= this.qMax)
+		{
+			throw new Exception ("Erros estourados");
+		}
+		
     }
 
     public boolean isComMaximoDeErrosAtingido  ()
@@ -28,7 +30,7 @@ class ControladorDeErros implements Cloneable
         return this.qErr + "/" + this.qMax;
     }
 
-    public boolean equals (Object obj)
+    public boolean equals (Object obj)//Implementado
     {
 		if (obj == this)
 			return true;
@@ -41,7 +43,7 @@ class ControladorDeErros implements Cloneable
 		
 		ControladorDeErros erro = (ControladorDeErros)obj;
 		
-		if (erro.qMax == this.qMax && erro.qMax == this.qMax)
+		if (erro.qMax == this.qMax && erro.qErr == this.qErr)
 			return true;
 		
 		return false;
@@ -49,7 +51,7 @@ class ControladorDeErros implements Cloneable
         // true no caso afirmativo ou false no caso negativo
     }
 
-    public int hashCode ()
+    public int hashCode ()//Implementado
     {
 		int ret = 1;
 		
@@ -58,11 +60,10 @@ class ControladorDeErros implements Cloneable
 		
 		return ret;
         // calcular e retornar o hashcode de this
-    }
-	
+    }	
 	
 
-    public ControladorDeErros (ControladorDeErros c) throws Exception
+    public ControladorDeErros (ControladorDeErros c) throws Exception //Implementado
     {
 		if (c == null)
 			throw new Exception ("Copia invalida!");
