@@ -46,7 +46,7 @@ class Tracinhos implements Cloneable
         return saida;
     }
 
-    public boolean equals (Object obj)//Teste
+    public boolean equals (Object obj)//Teste: PASS
     {
 		if (obj == this)
 			return true;
@@ -61,19 +61,13 @@ class Tracinhos implements Cloneable
 		
 		if (this.texto.length != traco.texto.length)
 			return false;
-		
-		for (char c : this.texto)
-		{
-			if (this.texto[c] != traco.texto[c])
-				return false;
-		}
-			
-		return true;
+	
+			return true;
         // verificar se this e obj possuem o mesmo conteúdo, retornando
         // true no caso afirmativo ou false no caso negativo
     }
 
-    public int hashCode ()//Teste: 
+    public int hashCode ()//Teste: PASS
     {
 		int ret = 1;
 		for (char c : this.texto)
@@ -95,7 +89,7 @@ class Tracinhos implements Cloneable
         // e copilar o conteúdo de t.texto para this.texto
     }
 
-    public Object clone ()
+    public Object clone ()//Teste: PASS
     {
 		Tracinhos ret = null;
 		
