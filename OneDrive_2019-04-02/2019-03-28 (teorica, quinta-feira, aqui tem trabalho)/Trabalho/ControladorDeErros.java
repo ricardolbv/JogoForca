@@ -10,13 +10,13 @@ class ControladorDeErros implements Cloneable
         this.qMax = qm;
     }
 
-    public void registreUmErro () throws Exception // Implementado
+    public void registreUmErro () throws Exception // Teste: Pass
     {
-		this.qErr ++;
 		if (this.qErr == this.qMax)
 		{
 			throw new Exception ("Erros estourados");
 		}
+		this.qErr ++;
     }
 
     public boolean isComMaximoDeErrosAtingido  ()
@@ -29,7 +29,7 @@ class ControladorDeErros implements Cloneable
         return this.qErr + "/" + this.qMax;
     }
 
-    public boolean equals (Object obj)//Implementado
+    public boolean equals (Object obj)//Teste: Pass
     {
 		if (obj == this)
 			return true;
@@ -50,7 +50,7 @@ class ControladorDeErros implements Cloneable
         // true no caso afirmativo ou false no caso negativo
     }
 
-    public int hashCode ()//Implementado
+    public int hashCode ()//Teste: Pass
     {
 		int ret = 1;
 		
@@ -62,7 +62,7 @@ class ControladorDeErros implements Cloneable
     }	
 	
 
-    public ControladorDeErros (ControladorDeErros c) throws Exception //Implementado
+    public ControladorDeErros (ControladorDeErros c) throws Exception //Teste: Pass
     {
 		if (c == null)
 			throw new Exception ("Copia invalida!");
@@ -72,7 +72,7 @@ class ControladorDeErros implements Cloneable
         // copiar c.qMax e c.qErr, respectivamente em, this.qMax e this.qErr
     }
 
-    public Object clone ()
+    public Object clone () //Teste: Pass
     {
 		ControladorDeErros ret = null;
 		

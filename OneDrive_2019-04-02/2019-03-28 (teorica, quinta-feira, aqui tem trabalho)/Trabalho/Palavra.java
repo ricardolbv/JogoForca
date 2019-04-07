@@ -10,7 +10,7 @@ class Palavra implements Comparable<Palavra>
         this.texto = txt;
     }
 
-    public int getQuantidadeDaLetra (char ltr) // TESTE: PASS
+    public int getQuantidadeDaLetra (char ltr) // TESTE: Pass
     {
 		int qtd = 0;
 		
@@ -23,7 +23,7 @@ class Palavra implements Comparable<Palavra>
 		return qtd;
     }
 
-    public int getPosicaoDeOcorrenciaDaLetra (int ord, char ltr) throws Exception //TESTE: Fail
+    public int getPosicaoDeOcorrenciaDaLetra (int ord, char ltr) throws Exception //TESTE: Pass
     {
 		int pos = 0, contador = ord;
 		
@@ -60,7 +60,7 @@ class Palavra implements Comparable<Palavra>
         return this.texto;
     }
 
-    public boolean equals (Object obj)//Teste: 
+    public boolean equals (Object obj)//Teste: Pass
     {
 		if (obj == this)
 			return true;
@@ -81,7 +81,7 @@ class Palavra implements Comparable<Palavra>
         // true no caso afirmativo ou false no caso negativo
     }
 
-    public int hashCode ()//Teste: 
+    public int hashCode ()//Teste: Pass
     {
 		
 		int ret = 1;
@@ -89,7 +89,6 @@ class Palavra implements Comparable<Palavra>
 		ret = ret * 2 + new String(this.texto).hashCode();
 		
 		return ret;
-        // calcular e retornar o hashcode de this
     }
 
     public int compareTo (Palavra p)

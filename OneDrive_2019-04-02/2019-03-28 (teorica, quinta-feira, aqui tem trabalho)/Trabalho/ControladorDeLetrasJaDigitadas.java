@@ -7,11 +7,11 @@ class ControladorDeLetrasJaDigitadas implements Cloneable
         this.jaForam="";
     }
 
-    public boolean isJaDigitada (char ltr) //Teste: nao consegui testar
+    public boolean isJaDigitada (char ltr) //Teste: Pass
     {
 		int i = 0;
 		
-		for ( ; i < this.jaForam.length() - 1; i++)
+		for ( ; i < this.jaForam.length(); i++) //Mudei para ir ate - tamanho!
 		{
 			if (this.jaForam.charAt(i) == ltr)
 				return true;
@@ -43,10 +43,11 @@ class ControladorDeLetrasJaDigitadas implements Cloneable
         return saida;
     }
 
-    public boolean equals (Object obj)// Teste: PASS
+    public boolean equals (Object obj)// Teste: Pass
     {
 		if (obj == this)
 			return true;
+		
 		
 		if (obj == null)
 			return false;
@@ -54,10 +55,18 @@ class ControladorDeLetrasJaDigitadas implements Cloneable
 		if (obj.getClass() != this.getClass())
 			return false;
 		
+		
 		ControladorDeLetrasJaDigitadas ltr = (ControladorDeLetrasJaDigitadas)obj;
 		
-		if (!ltr.jaForam.equals(this.jaForam))
+		if (ltr.jaForam.length() != this.jaForam.length())
 			return false;
+		
+		
+		for(int i = 0; i<this.jaForam.length(); i++)
+		{
+			if (this.jaForam.charAt(i) != ltr.jaForam.charAt(i))
+				return false;
+		}
 		
 		return true;
      }

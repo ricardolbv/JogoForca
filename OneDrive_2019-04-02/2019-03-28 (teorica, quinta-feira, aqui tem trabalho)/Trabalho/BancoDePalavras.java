@@ -32,12 +32,12 @@ public class BancoDePalavras
         return palavra;
     }
 
-    public  String toString ()// Pegando !
+    public  String toString ()// Teste: PASS
     {
 		String ret = "";
 		int i = 0;
 		
-			for ( ; i < (this.banco.length - 1); i++)
+			for ( ; i < this.banco.length; i++)
 			{
 				ret += this.banco[i]+", ";
 			}
