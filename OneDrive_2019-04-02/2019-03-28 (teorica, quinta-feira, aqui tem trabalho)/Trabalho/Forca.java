@@ -45,7 +45,7 @@ class Forca
                         }
                         else
                         {
-                            for (int i=0; i<qtd; i++)
+                            for (int i=0; i<qtd; i++)// for (int i=0; i<qtd; i++)
                                 tracinhos.desvele (palavra.getPosicaoDeOcorrenciaDaLetra (i,letra), letra);
                             System.out.println ();
                         }

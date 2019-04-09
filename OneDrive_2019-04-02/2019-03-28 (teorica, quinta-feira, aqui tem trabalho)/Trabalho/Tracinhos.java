@@ -30,7 +30,7 @@ class Tracinhos implements Cloneable
         // contrario
 		int i = 0;
 		
-		for (i=0; i<this.texto.length; i++)
+		for (i=0; i<this.texto.length ; i++)
 		{
 			if (this.texto[i] == '_')
 				return true;
@@ -43,7 +43,7 @@ class Tracinhos implements Cloneable
         String saida = "";
         int i;
 
-        for (i=0; i<this.texto.length-1; i++)
+        for (i=0; i<this.texto.length -1; i++)
             saida = saida + this.texto[i] + ' ';
 
         saida = saida + this.texto[i];
@@ -89,7 +89,13 @@ class Tracinhos implements Cloneable
 		if (t == null)
 			throw new Exception ("Clonagem invalida! ");
 		
-		this.texto = t.texto; // Duvida aqui 
+		this.texto  =  new char [t.texto.length]; 
+
+			for (int i = 0; i< t.texto.length; i++)
+			{
+				this.texto[i] = t.texto[i];
+			}
+		// Duvida aqui 
         // intanciar this.texto um vetor com o mesmo tamanho de t.texto
         // e copilar o conteúdo de t.texto para this.texto
     }

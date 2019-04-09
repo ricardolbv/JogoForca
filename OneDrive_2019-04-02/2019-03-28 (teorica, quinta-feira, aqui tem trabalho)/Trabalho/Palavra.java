@@ -30,13 +30,14 @@ class Palavra implements Comparable<Palavra>
 		
 		for (int i =0; i < this.texto.length(); i ++)
 		{
-			pos ++;
+			
 			if (this.texto.charAt(i) == ltr)
 			{
 				contador --;
 				if (contador < 0)
 				return pos;
 			}
+			pos ++;
 		}
 		throw new Exception ("Letra nao encontrada!");
         // se ord==0, retorna a posicao em que socorre
